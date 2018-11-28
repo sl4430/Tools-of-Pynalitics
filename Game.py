@@ -1,4 +1,4 @@
-# The program that executes the game.
+# The program that executes the main functions of the game.
 # Author: Qifu Yin
 # Date: 12-27-2018
 
@@ -11,7 +11,14 @@ import time
 #from Texts import*
 
 class Game():
-    def __init__(self,start):
+    def __init__(self):
+        #set the main background for the game
+        start = GraphWin("zhajinhua", 700, 400)
+        start.setCoords(0,400,615,0)
+        start.setBackground("white")
+        table = Rectangle(Point(600,353),Point(87,27))
+        table.setFill("brown")
+        table.draw(start)
         # Set variables for the game
         score = winnings = 0
         money = 1000
