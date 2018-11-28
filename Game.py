@@ -67,5 +67,29 @@ class Card(GraphicsObject):#subclass of GraphicsObject
         self.card = self.drawCard(value, center)
         self.card.draw(win)
 
+    #Get the value of playing card
     def getvalue(self):
-          
+        if self.value[1] == 'j':
+            value = 11
+            return int(value)
+        if self.value[1] == 'q':
+            value = 12
+            return int(value)
+        if self.value[1] == 'k':
+            value = 13
+            return int(value)
+        if slef.value[1:] == ['1','2','3','4','5','6','7','8','9','10']:
+            value = self.value[1:]
+            return int(value)
+
+    #Get suit of playing card
+    def getsuit(self):
+        color = self.value[0]
+        return color
+
+    # def drawcard(self, value, center):
+    #     self.center = center
+    #     self.value = value
+    #     file = 'draw_card'+str(value)+ '.gif'
+    #     self.image = Image(center,file)
+    #     return Image(center, file)
