@@ -23,14 +23,34 @@ class Game():
         score = winnings = 0
         money = 1000
         center = Point(250,100)
-        
-        
+
+
         #quit_Button = Button(start, Point(50,140), 75, 25,15,"Quit", True)
         #p = win.getMouse()
         #while not quit_Button.clicked(p):
            # continue
         time.sleep(30)
-        
+
         start.close()
 
-        
+class Deck:
+    #This is a class for deck of playing card
+    def __init__(self):
+        self.suits = ['h', 's', 'd','c']
+        #'h' represents heart, 's' represents spade, 'd' represent diamond, 'c' represents club
+        self.number = ['1','2','3','4','5','6','7','8','9','10','j','q','k']
+
+        #Create empty list
+        self.deckcard = list()
+        self.shuffledcard = list()
+
+        for suit in self.suits:
+            for num in self.number:
+                card = suit + num
+                self.deckcard.append(card)
+
+    #Create methond to shuffle the deck
+    def Shuffle(self):
+        self.shuffledcard = self.deckcard
+        random.shuffle(self.shuffledcard)
+        return self.shuffledcard
