@@ -54,3 +54,18 @@ class Deck:
         self.shuffledcard = self.deckcard
         random.shuffle(self.shuffledcard)
         return self.shuffledcard
+
+    def deal(self):
+        card = self.shuffledcard[0]##??
+        return card
+
+class Card(GraphicsObject):#subclass of GraphicsObject
+    def __init__(self, win, value, center):
+        self.value = value
+        self.win = win
+        self.center = center
+        self.card = self.drawCard(value, center)
+        self.card.draw(win)
+
+    def getvalue(self):
+          
