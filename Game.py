@@ -41,13 +41,15 @@ class Game():
         deck = Deck()
         deck.Shuffle()
         p = win.getMouse()
-        # Begin the game
+        # Begin the game:
+        
+        # set original bet
+        bet = 1
         while not quit_Button.clicked(p):
             p = win.getMouse()
             # User can click the draw button to start playing
             if draw_Button.clicked(p):
-                # original bet
-                bet = 1
+                # view original bet
                 bet_view.updateText(bet)
                 # draw 3 cards to player
                 player_cards = []
@@ -66,6 +68,18 @@ class Game():
                 # update the bottons
                 buttonUpdates('stillplaying',buttons) 
             if bet1_Button.clicked(p):
+                bet += 1
+                bet_view.updateText(bet)
+            if bet5_Button.clicked(p):
+                bet += 5
+                bet_view.updateText(bet)
+            if bet20_Button.clicked(p):
+                bet += 20
+                bet_view.updateText(bet)
+            if bet50_Button.clicked(p):
+                bet += 50
+                bet_view.updateText(bet)
+            
                 
                 
                 
