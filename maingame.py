@@ -10,7 +10,7 @@ from Gameplay import *
 
        
 def main():
-    win = GraphWin("Zhajinhua", 500, 200)
+    win = GraphWin("Zhajinhua", 800, 400)
     win.setCoords(0,200,415,0)
     win.setBackground("grey")
 

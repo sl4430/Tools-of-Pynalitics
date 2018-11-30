@@ -33,7 +33,7 @@ class Deck:
         return self.shuffledcards
 
     def Deal(self):
-        card = self.shuffledcard[0]
+        card = self.shuffledcards[0]
         return card
 
 class Card(GraphicsObject):#subclass of GraphicsObject

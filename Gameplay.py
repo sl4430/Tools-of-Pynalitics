@@ -7,12 +7,12 @@ import time
 import random
 import time
 import sys
-#from Deck import*
-#from Button import*
-#from Texts import*
+from Deck import*
+from Button import*
+from Texts import*
 
 class Game():
-    def __init__(self):
+    def __init__(self,win):
         #set the main background for the game
         start = GraphWin("zhajinhua", 700, 400)
         start.setCoords(0,400,615,0)
@@ -36,7 +36,7 @@ class Game():
         affirm_Button = Button(win, Point(50,165),75,25,15,"Affirm", False)
         again_Button = Button(win, Point(50,190), 75, 25,15,"Again", False)
         quit_Button = Button(win, Point(50,215), 75, 25,15,"Quit", True)
-        buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,again_Button,quit_Button]
+        buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,affirm_Butto,again_Button,quit_Button]
         # Create a deck and shuffle cards
         deck = Deck()
         deck.Shuffle()

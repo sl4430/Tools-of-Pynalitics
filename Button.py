@@ -21,6 +21,10 @@ class Button:
             self.activate()
         else:
             self.deactivate()
+    def clicked(self,p):
+        return (self.active and
+              self.x_min <= p.getX() <= self.x_max and
+              self.y_min <= p.getY() <= self.y_max)
             
     
     def activate(self): 
