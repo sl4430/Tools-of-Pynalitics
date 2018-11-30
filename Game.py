@@ -65,6 +65,7 @@ class Game():
                     value = deck.Deal()
                     card = Card(win,value,location)
                     computer_cards.append(card)
+                    card.Undraw()
                 # update the bottons
                 buttonUpdates('stillplaying',buttons) 
             if bet1_Button.clicked(p):
@@ -80,10 +81,16 @@ class Game():
                 bet += 50
                 bet_view.updateText(bet)
             if affirm_Button.clicked(p):
-                # compare the cards to decide who wins
-                
-                # settlement
-                
+                # compare the cards to decide who wins and settlement
+                if compare(player_cards, computer_cards):
+                    money += bet
+                    bank_view.updateText(money)
+                else:
+                    money -= bet
+                    bank_view.updateText(money)
+                # Draw the computer cards
+                for card in computer_cards:
+                    card.drawCard(card.value, card.centerPoint)
                 # update the buttons
                 buttonUpdates('gameover',buttons)
             if again_Button.clicked(p):
@@ -158,6 +165,7 @@ def is_pair(cards):
     return False
 
 def get_max(cards):
+    #get the type of hands, 6 is bomb and 1 is single
     if is_bomb(cards):
         return 6
     elif is_sf(cards):
@@ -179,6 +187,9 @@ def compare(cards1, cards2)
     value1 = value2 = []
     for card in cards1:
         suit1.append(card.value[0])
+        value1.append(int(card.value[1:]))
+    for card in cards2:
+        suit2.append(card.value[0])
         value2.append(int(card.value[1:]))
     # if num1 > num2, player wins, return True
     if number_1 > number_2:
@@ -190,7 +201,61 @@ def compare(cards1, cards2)
     elif number_1 == number_2:
         # if bomb
         if number_1 == 6:
-            if value
+            if value1[0] >= value2[0]:
+                return True
+            return False
+        # if sf and straight
+        if number_1 == 5 or number_1 == 3:
+            max1 = max(value1)
+            max2 = max(value2)
+            if max1 >= max2:
+                return True
+            return False
+        # if flush and single
+        if number_1 == 4 and number_1 == 1:
+            value1 = sorted(value1,reverse = True)
+            value2 = sorted(value2,reverse = True)
+            if value1[0] > value2[0]:
+                return True
+            elif value1[0] < value2[0]:
+                return False
+            else:
+                if value1[1] > value2[1]:
+                    return True
+                elif value1[1] < value2[1]:
+                    return False
+                else:
+                    if value1[2] >= value2[2]:
+                        return True
+                    elif value1[2] < value2[2]:
+                        return False
+        # if pair
+        if number_1 == 2:
+            value1 = sorted(value1)
+            value2 = sorted(value2)
+            if value1[0] == value1[1]:
+                pair_value1 = value1[0]
+                single_value1 = value1[2]
+            else:
+                pair_value1 = value1[2]
+                single_value1 = value1[0]
+            if value2[0] == value2[1]:
+                pair_value2 = value2[0]
+                single_value2 = value2[2]
+            else:
+                pair_value2 = value2[2]
+                single_value2 = value2[0]
+            if pair_value1 > pair_value2:
+                return True
+            elif pair_value1 < pair_value2:
+                return False
+            else:
+                if single_value1 >= single_value2:
+                    return True
+                else:
+                    return False
+
+            
             
         
 
