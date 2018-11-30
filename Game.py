@@ -54,17 +54,48 @@ class Game():
                 bet = 1
                 bet_view.updateText(bet)
                 # draw 3 cards to player
+                play_cards = []
                 for i in range(3):
                     location = Point(125+25*i,90) # Place each card 25*i further on the x-axis
-                    kaart,score,dealtCards = dealCard(win,deck,dealtCards,score,location)
+                    value = deck.Deal()
+                    card = Card(win,value,location)
+                    play_cards.append(card)
                     score,winnings,money = gameUpdates('stillplaying',score,winnings,money,score_view,winnings_view,bank_view,False)
                  # draw 3 cards to computer
+                computer_cards = []
+                for i in range(3):
+                    location = Point(125+25*i,200) # Place each card 25*i further on the x-axis
+                    kaart,score,play_Cards = dealCard(win,deck,dealtCards,score,location)
+                    score,winnings,money = gameUpdates('stillplaying',score,winnings,money,score_view,winnings_view,bank_view,False)                
+                
+                
 #                 gameUpdates('stillplaying',score,winnings,money,score_view,winnings_view,bank_view,False)
                 buttonUpdates('stillplaying',buttons)
     
+def dealCard(win,deck,dealtcards,score,location):
+    """Deals a card, draws it and adds it to the dealtCards list, then returns the card, score (value) and the list of total cards"""
+    value = deck.Deal()
+    card = Card(win,value,location)
+    dealtcards.append(card)
+    score += card.getValue()
+    return card,score,dealtcards    
     
-    
-    
+def gameUpdates(result,score,winnings,money,score_view,winnings_view,bank_view,s):
+    """Updates all Scoreboxes with their new values according to the result of the game"""
+    if result == 'stillplaying':
+        winnings,money = winsScheme(score,money,winnings,False) # No payout yet
+        
+    elif result == 'gameover':
+        winnings,money = winsScheme(score,money,winnings,True) # Money payed or payed out
+
+    elif result == 'newgame': # Resets the score and winnings so a new round can be played
+        score = 0
+        winnings = 0
+
+    score_view.updateText(score)
+    winnings_view.updateText(winnings)
+    bank_view.updateText(money)
+    return score,winnings,money    
     
     
     
