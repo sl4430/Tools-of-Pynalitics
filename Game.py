@@ -45,17 +45,27 @@ class Game():
         deck = Deck()
         deck.Shuffle()
         p = win.getMouse()
-        
+        # Begin the game
         while not quit_Button.clicked(p):
             p = win.getMouse()
             # User can click the draw button to start playing
             if draw_Button.clicked(p):
-                
+                # original bet
                 bet = 1
                 bet_view.updateText(bet)
-                
+                # draw 3 cards to player
+                for i in range(3):
+                    location = Point(125+25*i,90) # Place each card 25*i further on the x-axis
+                    kaart,score,dealtCards = dealCard(win,deck,dealtCards,score,location)
+                    score,winnings,money = gameUpdates('stillplaying',score,winnings,money,score_view,winnings_view,bank_view,False)
+                 # draw 3 cards to computer
 #                 gameUpdates('stillplaying',score,winnings,money,score_view,winnings_view,bank_view,False)
                 buttonUpdates('stillplaying',buttons)
     
     
-def gameUpdates(status,bank,bet,bank_view,bet_view,s):
+    
+    
+    
+    
+    
+    
