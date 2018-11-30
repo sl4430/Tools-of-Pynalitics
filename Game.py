@@ -156,7 +156,43 @@ def is_pair(cards):
     if value[0] == value[1] or value[0] == value[2] or value[2] == value[1]:
         return True
     return False
-    
+
+def get_max(cards):
+    if is_bomb(cards):
+        return 6
+    elif is_sf(cards):
+        return 5
+    elif is_flush(cards):
+        return 4
+    elif is_straight(cards):
+        return 3
+    elif is_pair(cards):
+        return 2
+    else:
+        return 1
+
+def compare(cards1, cards2)
+    # cards1 is player and cards2 is computer
+    number_1 = get_max(card1)
+    number_2 = get_max(card2)
+    suit1 = suit2 = []
+    value1 = value2 = []
+    for card in cards1:
+        suit1.append(card.value[0])
+        value2.append(int(card.value[1:]))
+    # if num1 > num2, player wins, return True
+    if number_1 > number_2:
+        return True
+    # if num1 > num2, computer wins, return False
+    elif number_1 < number_2:
+        return False
+    # same type of hands
+    elif number_1 == number_2:
+        # if bomb
+        if number_1 == 6:
+            if value
+            
+        
 
 
 
