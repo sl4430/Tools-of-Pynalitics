@@ -6,11 +6,11 @@
 # Date: 17-12-2016
 
 from graphics import *
-from GamePlay import *
+from Gameplay import *
 
        
 def main():
-    win = GraphWin("Blackjack", 500, 200)
+    win = GraphWin("Zhajinhua", 500, 200)
     win.setCoords(0,200,415,0)
     win.setBackground("grey")
 
