@@ -40,7 +40,7 @@ class Button:
         
 def buttonUpdates(status,buttons):
     """Activates or deactivates buttons based on the status of the game"""
-    if status == 'gameover':
+    if status == 'newgame':
         buttons[0].activate()
         buttons[1].deactivate()
         buttons[2].deactivate()
@@ -58,7 +58,7 @@ def buttonUpdates(status,buttons):
         buttons[5].activate()
         buttons[6].deactivate()
         buttons[7].activate()
-    elif status == 'newgame':
+    elif status == 'gameover':
         buttons[0].deactivate()
         buttons[1].deactivate()
         buttons[2].deactivate()

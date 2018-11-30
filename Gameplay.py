@@ -36,7 +36,7 @@ class Game():
         affirm_Button = Button(win, Point(50,165),75,25,15,"Affirm", False)
         again_Button = Button(win, Point(50,190), 75, 25,15,"Again", False)
         quit_Button = Button(win, Point(50,215), 75, 25,15,"Quit", True)
-        buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,affirm_Butto,again_Button,quit_Button]
+        buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,affirm_Button,again_Button,quit_Button]
         # Create a deck and shuffle cards
         deck = Deck()
         deck.Shuffle()
@@ -65,7 +65,7 @@ class Game():
                     value = deck.Deal()
                     card = Card(win,value,location)
                     computer_cards.append(card)
-                    card.Undraw()
+#                     card.Undraw()
                 # update the bottons
                 buttonUpdates('stillplaying',buttons) 
             if bet1_Button.clicked(p):
@@ -143,7 +143,7 @@ def is_flush(cards):
 def is_straight(cards):
     value = []
     for card in cards:
-        value.append(card.value[1:])
+        value.append(int(card.value[1:]))
     if '1' in value:
         if '12' in value:
             if '13' in value:
@@ -181,8 +181,8 @@ def get_max(cards):
 
 def compare(cards1, cards2):
     # cards1 is player and cards2 is computer
-    number_1 = get_max(card1)
-    number_2 = get_max(card2)
+    number_1 = get_max(cards1)
+    number_2 = get_max(cards2)
     suit1 = suit2 = []
     value1 = value2 = []
     for card in cards1:
