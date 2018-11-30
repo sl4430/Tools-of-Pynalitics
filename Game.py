@@ -28,7 +28,11 @@ class Game():
         bet = 0
         money = 1000
         center = Point(250,100)
-
+        # Draw the bank and bet in the window
+        bank_view = Scorebox(win, Point(115,20),"    $",money)
+        bet_view = Scorebox(win, Point(210,20),"Bet:",bet)
+        
+        
         #p = win.getMouse()
         #while not quit_Button.clicked(p):
            # continue
