@@ -8,7 +8,7 @@ import random
 import time
 import sys
 #from Deck import*
-#from Button import*
+from Button import*
 #from Texts import*
 
 class Game():
@@ -21,9 +21,18 @@ class Game():
         table.setFill("brown")
         table.draw(start)
         # Set variables for the game
-        score = winnings = 0
-        money = 1000
+        score = 0
+        money = 100
         center = Point(250,100)
+        
+        # Draw the buttons needed in the game
+        draw_Button = Button(start, Point(50,40), 75, 25,15,"Draw", True)
+        bet_Button = Button(start, Point(50,65),75,25,15,"Bet", False)
+        #pass_Button = Button(win, Point(50,90),75,25,15,"Pass", False)
+        again_Button = Button(start, Point(50,115), 75, 25,15,"Again", False)
+        quit_Button = Button(start, Point(50,140), 75, 25,15,"Quit", True)
+        #newdeck_Button = Button(win, Point(112,33), 50, 12,10,"New deck", False)
+        #buttons = [deal_Button,draw_Button,pass_Button,again_Button,quit_Button,newdeck_Button]
 
 
         #quit_Button = Button(start, Point(50,140), 75, 25,15,"Quit", True)
