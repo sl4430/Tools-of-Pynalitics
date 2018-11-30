@@ -101,26 +101,5 @@ class Game():
         # Window closes if the quit_Button is clicked
         win.close()
         
-        s
-            
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-    
-    
-    
+
+           
