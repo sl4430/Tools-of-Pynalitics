@@ -21,7 +21,7 @@ class Game():
         table.setFill("brown")
         table.draw(start)
         # Set variables for the game
-        score = winnings = 0
+        bet = 0
         money = 1000
         center = Point(250,100)
         # Draw the bank and bet in the window
@@ -100,6 +100,36 @@ class Game():
                 
         # Window closes if the quit_Button is clicked
         win.close()
+        
+def is_bomb(cards):
+    value = []
+    for card in cards:
+        value.append(card.value[1:])
+    if value[0] == value[1] and value[1] == value[2]:
+        return True
+    return False
+def is_sf():
+    suit = []
+    value = []
+    for card in cards:
+        suit.append(card.value[0])
+        value.append(card.value[1:])
+    
+def is_flush():
+    
+def is_straight():
+    
+def is_pair():
+    
+
+
+
+
+
+
+
+
+
         
 
            
