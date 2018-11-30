@@ -14,9 +14,9 @@ class Button:
         self.rect = Rectangle(p1,p2)
         self.rect.setFill('green')
         self.rect.draw(start)
-        #self.text = Text(center, text)
-        #self.text.setSize(size)
-        #self.text.draw(win)
+        self.text = Text(center, text)
+        self.text.setSize(size)
+        self.text.draw(start)
         if s is True:
             self.activate()
         else:
