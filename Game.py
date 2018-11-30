@@ -41,10 +41,9 @@ class Game():
         deck = Deck()
         deck.Shuffle()
         p = win.getMouse()
+        
         # Begin the game:
         
-#         # set original bet
-#         bet = 1
         while not quit_Button.clicked(p):
             p = win.getMouse()
             # User can click the draw button to start playing
@@ -88,7 +87,19 @@ class Game():
                 # update the buttons
                 buttonUpdates('gameover',buttons)
             if again_Button.clicked(p):
+                # clear the cards
+                for i in player_cards:
+                    i.Undraw()
+                for i in computer_cards:
+                    i.Undraw()
+                # reset the scoreboard
+                bet = 0
+                bet_view.updateText(bet)
+                # update the buttons
+                buttonUpdates("newgame", buttons)
                 
+        # Window closes if the quit_Button is clicked
+        win.close()
             
                 
                 
