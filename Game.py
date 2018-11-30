@@ -24,10 +24,6 @@ class Game():
         score = winnings = 0
         money = 1000
         center = Point(250,100)
-        # Set variables for the game
-        bet = 0
-        money = 1000
-        center = Point(250,100)
         # Draw the bank and bet in the window
         bank_view = Scorebox(win, Point(115,20),"    $",money)
         bet_view = Scorebox(win, Point(210,20),"Bet:",bet)
@@ -46,21 +42,64 @@ class Game():
         deck.Shuffle()
         p = win.getMouse()
         
+        # Begin the game:
+        
         while not quit_Button.clicked(p):
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            p = win.getMouse()
+            # User can click the draw button to start playing
+            if draw_Button.clicked(p):
+                # view original bet
+                bet = 1
+                bet_view.updateText(bet)
+                # draw 3 cards to player
+                player_cards = []
+                for i in range(3):
+                    location = Point(125+25*i,90) # Place each card 25*i further on the x-axis
+                    value = deck.Deal()
+                    card = Card(win,value,location)
+                    player_cards.append(card)
+                 # draw 3 cards to computer
+                computer_cards = []
+                for i in range(3):
+                    location = Point(125+25*i,200) # Place each card 25*i further on the x-axis
+                    value = deck.Deal()
+                    card = Card(win,value,location)
+                    computer_cards.append(card)
+                # update the bottons
+                buttonUpdates('stillplaying',buttons) 
+            if bet1_Button.clicked(p):
+                bet += 1
+                bet_view.updateText(bet)
+            if bet5_Button.clicked(p):
+                bet += 5
+                bet_view.updateText(bet)
+            if bet20_Button.clicked(p):
+                bet += 20
+                bet_view.updateText(bet)
+            if bet50_Button.clicked(p):
+                bet += 50
+                bet_view.updateText(bet)
+            if affirm_Button.clicked(p):
+                # compare the cards to decide who wins
+                
+                # settlement
+                
+                # update the buttons
+                buttonUpdates('gameover',buttons)
+            if again_Button.clicked(p):
+                # clear the cards
+                for i in player_cards:
+                    i.Undraw()
+                for i in computer_cards:
+                    i.Undraw()
+                # reset the scoreboard
+                bet = 0
+                bet_view.updateText(bet)
+                # update the buttons
+                buttonUpdates("newgame", buttons)
+                
+        # Window closes if the quit_Button is clicked
+        win.close()
+        
+
+           
