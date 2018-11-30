@@ -32,7 +32,14 @@ class Game():
         again_Button = Button(start, Point(50,115), 75, 25,15,"Again", False)
         quit_Button = Button(start, Point(50,140), 75, 25,15,"Quit", True)
         #newdeck_Button = Button(win, Point(112,33), 50, 12,10,"New deck", False)
-        #buttons = [deal_Button,draw_Button,pass_Button,again_Button,quit_Button,newdeck_Button]
+        buttons = [draw_Button,bet_Button,again_Button,again_Button,quit_Button]
+          # Create a deck and shuffle it 3 times
+        deck = Deck()
+        for i in range(3):
+            deck.Shuffle()
+
+        p = win.getMouse()
+        totalCards = 0
 
 
         #quit_Button = Button(start, Point(50,140), 75, 25,15,"Quit", True)
