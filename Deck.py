@@ -14,7 +14,7 @@ class Deck:
     def __init__(self):
         self.soorten = ['h', 's', 'd','c']
         #'h' represents heart, 's' represents spade, 'd' represent diamond, 'c' represents club
-        self.waarden = ['1','2','3','4','5','6','7','8','9','10','11','12','13']
+        self.waarden = ['14','2','3','4','5','6','7','8','9','10','11','12','13']
         #11 represents 'J', 12 represents 'Q', 13 represents 'K'
 
         #Create empty list

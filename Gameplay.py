@@ -120,9 +120,9 @@ def is_sf(cards):
     value = []
     for card in cards:
         suit.append(card.value[0])
-        value.append(card.value[1:])
+        value.append(int(card.value[1:]))
     if suit[0] == suit[1] and suit[1] == suit[2]:
-        if '1' in value:
+        if '14' in value:
             if '12' in value:
                 if '13' in value:
                     return True
@@ -144,7 +144,7 @@ def is_straight(cards):
     value = []
     for card in cards:
         value.append(int(card.value[1:]))
-    if '1' in value:
+    if '14' in value:
         if '12' in value:
             if '13' in value:
                 return True
