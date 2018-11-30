@@ -24,9 +24,11 @@ class Game():
         score = winnings = 0
         money = 1000
         center = Point(250,100)
+        # Set variables for the game
+        bet = 0
+        money = 1000
+        center = Point(250,100)
 
-
-        #quit_Button = Button(start, Point(50,140), 75, 25,15,"Quit", True)
         #p = win.getMouse()
         #while not quit_Button.clicked(p):
            # continue
