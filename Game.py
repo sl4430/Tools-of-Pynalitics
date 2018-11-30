@@ -43,13 +43,14 @@ class Game():
         p = win.getMouse()
         # Begin the game:
         
-        # set original bet
-        bet = 1
+#         # set original bet
+#         bet = 1
         while not quit_Button.clicked(p):
             p = win.getMouse()
             # User can click the draw button to start playing
             if draw_Button.clicked(p):
                 # view original bet
+                bet = 1
                 bet_view.updateText(bet)
                 # draw 3 cards to player
                 player_cards = []
@@ -79,6 +80,15 @@ class Game():
             if bet50_Button.clicked(p):
                 bet += 50
                 bet_view.updateText(bet)
+            if affirm_Button.clicked(p):
+                # compare the cards to decide who wins
+                
+                # settlement
+                
+                # update the buttons
+                buttonUpdates('gameover',buttons)
+            if again_Button.clicked(p):
+                
             
                 
                 
