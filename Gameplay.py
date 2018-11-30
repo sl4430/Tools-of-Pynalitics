@@ -14,12 +14,12 @@ from Texts import*
 class Game():
     def __init__(self,win):
         #set the main background for the game
-        start = GraphWin("zhajinhua", 700, 400)
-        start.setCoords(0,400,615,0)
-        start.setBackground("white")
-        table = Rectangle(Point(600,353),Point(87,27))
-        table.setFill("brown")
-        table.draw(start)
+#         start = GraphWin("zhajinhua", 700, 400)
+#         start.setCoords(0,400,615,0)
+#         start.setBackground("white")
+#         table = Rectangle(Point(600,353),Point(87,27))
+#         table.setFill("brown")
+#         table.draw(start)
         # Set variables for the game
         bet = 0
         money = 1000
@@ -61,11 +61,11 @@ class Game():
                  # draw 3 cards to computer
                 computer_cards = []
                 for i in range(3):
-                    location = Point(125+25*i,200) # Place each card 25*i further on the x-axis
+                    location = Point(300+25*i,90) # Place each card 25*i further on the x-axis
                     value = deck.Deal()
                     card = Card(win,value,location)
                     computer_cards.append(card)
-#                     card.Undraw()
+                    card.Undraw()
                 # update the bottons
                 buttonUpdates('stillplaying',buttons) 
             if bet1_Button.clicked(p):
@@ -90,7 +90,7 @@ class Game():
                     bank_view.updateText(money)
                 # Draw the computer cards
                 for card in computer_cards:
-                    card.drawCard(card.value, card.centerPoint)
+                    card.kaart.draw(win)
                 # update the buttons
                 buttonUpdates('gameover',buttons)
             if again_Button.clicked(p):

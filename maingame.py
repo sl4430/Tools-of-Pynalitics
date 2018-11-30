@@ -11,7 +11,7 @@ from Gameplay import *
        
 def main():
     win = GraphWin("Zhajinhua", 800, 400)
-    win.setCoords(0,200,415,0)
+    win.setCoords(0,250,415,0)
     win.setBackground("grey")
 
     # Draw the table
