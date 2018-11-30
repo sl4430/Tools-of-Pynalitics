@@ -41,10 +41,26 @@ class Game():
         again_Button = Button(win, Point(50,190), 75, 25,15,"Again", False)
         quit_Button = Button(win, Point(50,215), 75, 25,15,"Quit", True)
         buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,again_Button,quit_Button]
+        # Create a deck and shuffle cards
+        deck = Deck()
+        deck.Shuffle()
+        p = win.getMouse()
         
-        #p = win.getMouse()
-        #while not quit_Button.clicked(p):
-           # continue
-        time.sleep(30)
-
-        start.close()
+        while not quit_Button.clicked(p):
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
