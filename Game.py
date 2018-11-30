@@ -31,7 +31,16 @@ class Game():
         # Draw the bank and bet in the window
         bank_view = Scorebox(win, Point(115,20),"    $",money)
         bet_view = Scorebox(win, Point(210,20),"Bet:",bet)
-        
+        # Draw the buttons needed in the game
+        draw_Button = Button(win, Point(50,40), 75, 25,15,"Draw", True)
+        bet1_Button = Button(win, Point(50,65),75,25,15,"$1", False)
+        bet5_Button = Button(win, Point(50,90),75,25,15,"$5", False)
+        bet20_Button = Button(win, Point(50,115),75,25,15,"$20", False)
+        bet50_Button = Button(win, Point(50,140),75,25,15,"$50", False)
+        affirm_Button = Button(win, Point(50,165),75,25,15,"Affirm", False)
+        again_Button = Button(win, Point(50,190), 75, 25,15,"Again", False)
+        quit_Button = Button(win, Point(50,215), 75, 25,15,"Quit", True)
+        buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,again_Button,quit_Button]
         
         #p = win.getMouse()
         #while not quit_Button.clicked(p):
