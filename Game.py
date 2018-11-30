@@ -179,7 +179,7 @@ def get_max(cards):
     else:
         return 1
 
-def compare(cards1, cards2)
+def compare(cards1, cards2):
     # cards1 is player and cards2 is computer
     number_1 = get_max(card1)
     number_2 = get_max(card2)
