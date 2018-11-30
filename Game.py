@@ -108,7 +108,7 @@ def is_bomb(cards):
     if value[0] == value[1] and value[1] == value[2]:
         return True
     return False
-def is_sf():
+def is_sf(cards):
     suit = []
     value = []
     for card in cards:
@@ -126,19 +126,36 @@ def is_sf():
                 return True
             else:
                 return False
-def is_flush():
+def is_flush(cards):
     suit = []
     for card in cards:
         suit.append(card.value[0])
     if suit[0] == suit[1] and suit[1] == suit[2]:
         return True
     return False
-def is_straight():
+def is_straight(cards):
     value = []
     for card in cards:
         value.append(card.value[1:])
+    if '1' in value:
+        if '12' in value:
+            if '13' in value:
+                return True
+        return False
+    else:
+        value = sorted(value)
+        if abs(value[0]-value[1]) == 1 and abs(value[1]-value[2]) == 1:
+            return True
+        else:
+            return False
     
-def is_pair():
+def is_pair(cards):
+    value = []
+    for card in cards:
+        value.append(card.value[1:])
+    if value[0] == value[1] or value[0] == value[2] or value[2] == value[1]:
+        return True
+    return False
     
 
 
