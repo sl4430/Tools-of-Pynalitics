@@ -221,15 +221,15 @@ def compare(cards1, cards2):
                 return True
             elif value1[0] < value2[0]:
                 return False
-            else:
+            elif value1[0] == value2[0]:
                 if value1[1] > value2[1]:
                     return True
                 elif value1[1] < value2[1]:
                     return False
-                else:
+                elif value1[1] == value2[1]:
                     if value1[2] >= value2[2]:
                         return True
-                    elif value1[2] < value2[2]:
+                    else:
                         return False
         # if pair
         if number_1 == 2:
