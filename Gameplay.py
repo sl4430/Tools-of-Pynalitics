@@ -104,6 +104,8 @@ class Game():
                 bet_view.updateText(bet)
                 # update the buttons
                 buttonUpdates("newgame", buttons)
+                deck = Deck()
+                deck.Shuffle()
                 
         # Window closes if the quit_Button is clicked
         win.close()
