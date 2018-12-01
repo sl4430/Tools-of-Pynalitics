@@ -212,7 +212,7 @@ def compare(cards1, cards2):
                 return True
             return False
         # if flush and single
-        if number_1 == 4 and number_1 == 1:
+        if number_1 == 4 or number_1 == 1:
             value1 = sorted(value1,reverse = True)
             value2 = sorted(value2,reverse = True)
             if value1[0] > value2[0]:
