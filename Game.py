@@ -49,14 +49,14 @@ class Game():
                 # draw 3 cards to player
                 player_cards = []
                 for i in range(3):
-                    location = Point(125+25*i,90) # Place each card 25*i further on the x-axis
+                    location = Point(140+25*i,125) # Place each card 25*i further on the x-axis
                     value = deck.Deal()
                     card = Card(win,value,location)
                     player_cards.append(card)
                  # draw 3 cards to computer
                 computer_cards = []
                 for i in range(3):
-                    location = Point(300+25*i,90) # Place each card 25*i further on the x-axis
+                    location = Point(290+25*i,125) # Place each card 25*i further on the x-axis
                     value = deck.Deal()
                     card = Card(win,value,location)
                     computer_cards.append(card)
