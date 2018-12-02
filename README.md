@@ -59,18 +59,18 @@ Requirements
 -------
 1. Python 3.6+
 
-2. All classes needed are included in this repository
+2. All classes needed and GUI Zelle's graphics.py are included in this repository
 
-3. GUI Zelle's graphics.py (Put this file somewhere where Python can see it.)
+3. GUI Zelle's graphics.py (Put this file  and zhajinhua.py together)
 
 Run Instructions
 -------
-Clone this repository:
+1. Clone this repository:
 
 'git@github.com:sl4430/Tools-of-Pynalitics.git'
 
 
-Start the game with the command：
+2. Start the game with the command：
 
 'python zhajinhua.py'
 
