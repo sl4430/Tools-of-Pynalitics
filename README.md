@@ -55,7 +55,7 @@ At first, player has 1000 dollar principal, and the initial bet is one dollar. E
 
 
 
-Installatin Requirements
+Installation Requirements
 -------
 1. Python 3.6+
 
