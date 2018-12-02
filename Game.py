@@ -13,14 +13,6 @@ from Texts import*
 
 class Game():
     def __init__(self,win):
-        #set the main background for the game
-#         start = GraphWin("zhajinhua", 700, 400)
-#         start.setCoords(0,400,615,0)
-#         start.setBackground("white")
-#         table = Rectangle(Point(600,353),Point(87,27))
-#         table.setFill("brown")
-#         table.draw(start)
-        # Set variables for the game
         bet = 0
         money = 1000
         center = Point(250,100)
@@ -28,7 +20,7 @@ class Game():
         bank_view = Scorebox(win, Point(115,20),"    $",money)
         bet_view = Scorebox(win, Point(210,20),"Bet:",bet)
         # Draw the buttons needed in the game
-        draw_Button = Button(win, Point(50,40), 75, 25,15,"Draw", True)
+        deal_Button = Button(win, Point(50,40), 75, 25,15,"Deal", True)
         bet1_Button = Button(win, Point(50,65),75,25,15,"$1", False)
         bet5_Button = Button(win, Point(50,90),75,25,15,"$5", False)
         bet20_Button = Button(win, Point(50,115),75,25,15,"$20", False)
@@ -36,7 +28,7 @@ class Game():
         affirm_Button = Button(win, Point(50,165),75,25,15,"Affirm", False)
         again_Button = Button(win, Point(50,190), 75, 25,15,"Again", False)
         quit_Button = Button(win, Point(50,215), 75, 25,15,"Quit", True)
-        buttons = [draw_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,affirm_Button,again_Button,quit_Button]
+        buttons = [deal_Button,bet1_Button,bet5_Button,bet20_Button,bet50_Button,affirm_Button,again_Button,quit_Button]
         # Create a deck and shuffle cards
         deck = Deck()
         deck.Shuffle()
@@ -47,7 +39,7 @@ class Game():
         while not quit_Button.clicked(p):
             p = win.getMouse()
             # User can click the draw button to start playing
-            if draw_Button.clicked(p):
+            if deal_Button.clicked(p):
                 # view original bet
                 bet = 1
                 bet_view.updateText(bet)
