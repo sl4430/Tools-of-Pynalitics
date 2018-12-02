@@ -55,13 +55,12 @@ At first, player has 1000 dollar principal, and the initial bet is one dollar. E
 
 
 
-Requirements
+Installatin Requirements
 -------
 1. Python 3.6+
 
-2. All classes needed and GUI Zelle's graphics.py are included in this repository
+2. All classes needed and GUI Zelle's graphics.py are included in this repository(put all files in the same directory)
 
-3. GUI Zelle's graphics.py (Put this file  and zhajinhua.py in the same directory)
 
 Run Instructions
 -------
@@ -73,6 +72,8 @@ Run Instructions
 2. Start the game with the command：
 
 'python zhajinhua.py'
+
+3. Click 'Deal' button to shuffle cards, then choose the amount you want to bet (the initial bet fee is 1$), and click 'Affirm' button to turn over computer's cards and settle your account. 
 
 Reference
 -------
