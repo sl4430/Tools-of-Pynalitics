@@ -30,12 +30,12 @@ class Button:
             
     
     def activate(self): 
-        #self.text.setFill('black')
+        self.text.setFill('black')
         self.rect.setWidth(1)
         self.active = True
  
     def deactivate(self):
-        #self.text.setFill('darkgreen')
+        self.text.setFill('darkgreen')
         self.rect.setWidth(1)
         self.active = False
         
