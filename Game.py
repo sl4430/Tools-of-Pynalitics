@@ -13,6 +13,9 @@ from Texts import*
 
 class Game():
     def __init__(self,win):
+        file = "zhajinhua_cardgif/Table.png"
+        image = Image(Point(243.5,127.5),file)
+        image.draw(win)
         bet = 0
         money = 1000
         center = Point(250,100)

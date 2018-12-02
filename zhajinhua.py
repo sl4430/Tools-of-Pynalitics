@@ -14,8 +14,9 @@ def main():
 
     # Draw the table
     table = Rectangle(Point(400,225),Point(87,30))
-    table.setFill("brown")
+    table.setFill("white")
     table.draw(winStart)
+    
 
     Game(winStart)
 
