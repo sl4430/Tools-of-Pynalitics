@@ -7,7 +7,7 @@ import time
 import random
 import time
 import sys
-from Deck import*
+from CardDeck import*
 from Button import*
 from Texts import*
 
