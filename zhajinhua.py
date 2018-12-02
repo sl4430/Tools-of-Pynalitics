@@ -5,7 +5,7 @@
 
 #Use this as the main script
 from graphics import *
-from Gameplay import *
+from Game import *
 
        
 def main():
