@@ -3,6 +3,7 @@
 # Author: Qifu Yin
 # Date: 12-27-2018
 
+#Use this as the main script
 from graphics import *
 from Game import *
 
