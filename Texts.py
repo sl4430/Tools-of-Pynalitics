@@ -1,3 +1,4 @@
+# This file deals with text display function for main game
 # Author: Qifu Yin, Shujun Liu, Shixin Li, Di Zhu
 # Date: 12-02-2018
 from graphics import *
@@ -32,15 +33,4 @@ class Scorebox(Text):
                 else:
                     self.value.setStyle('normal')
 
-def FlashyText(win,center,text,timing):
-    #flash text of winning
-    winner = Text(center,text)
-    winner.setFace("arial")
-    winner.setFill("black")
-    winner.setSize(32)
-    for i in range(1,6):
-        time.sleep(timing)
-        if i % 2 == 0:
-            winner.draw(win)
-        else:
-            winner.undraw()
+

@@ -1,3 +1,4 @@
+# This files defines buttons
 # Author: Qifu Yin, Shujun Liu, Shixin Li, Di Zhu
 # Date: 12-02-2018
 import sys
@@ -31,17 +32,17 @@ class Button:
     
     def activate(self): 
         self.text.setFill('black')
-        self.rect.setWidth(1)
+        #self.rect.setWidth(1)
         self.active = True
  
     def deactivate(self):
         self.text.setFill('darkgreen')
-        self.rect.setWidth(1)
+        #self.rect.setWidth(1)
         self.active = False
         
         
 def buttonUpdates(status,buttons):
-    """Activates or deactivates buttons based on the status of the game"""
+    #update buttons to hint which buttons users can click
     if status == 'newgame':
         buttons[0].activate()
         buttons[1].deactivate()
