@@ -1,4 +1,4 @@
-Zhajinhua(China Card Game) in Python
+Zhajinhua(Chinese Card Game) in Python
 ====
 
 Group Name and Section
@@ -61,7 +61,7 @@ Requirements
 
 2. All classes needed and GUI Zelle's graphics.py are included in this repository
 
-3. GUI Zelle's graphics.py (Put this file  and zhajinhua.py together)
+3. GUI Zelle's graphics.py (Put this file  and zhajinhua.py in the same directory)
 
 Run Instructions
 -------
@@ -76,9 +76,7 @@ Run Instructions
 
 Reference
 -------
-Zelle's graphics.py
-
-It is written by John Zelle for use with the book "Python Programming: An Introduction to Computer Science" (Franklin, Beedle & Associates).
+graphics.py: It is written by John Zelle for use with the book "Python Programming: An Introduction to Computer Science" (Franklin, Beedle & Associates).
 
 LICENSE: This is open-source software released under the terms of the
 GPL (http://www.gnu.org/licenses/gpl.html).
