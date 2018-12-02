@@ -42,6 +42,12 @@ class Game():
         deck.Shuffle()
         p = win.getMouse()
         
+        #test code
+        num_1= num_2=value1=value2=0
+        num1_view = Scorebox(win, Point(270,20),"my",num_1)
+        num2_view = Scorebox(win, Point(350,20),"computer:",num_2)
+        #test code
+        
         # Begin the game:
         
         while not quit_Button.clicked(p):
@@ -82,6 +88,12 @@ class Game():
                 bet_view.updateText(bet)
             if affirm_Button.clicked(p):
                 # compare the cards to decide who wins and settlement
+                #test code
+                num_1 = get_max(player_cards)
+                num_2 = get_max(computer_cards)
+                num1_view.updateText(num_1)
+                num2_view.updateText(num_2)
+                #test code
                 if compare(player_cards, computer_cards):
                     money += bet
                     bank_view.updateText(money)
@@ -189,10 +201,10 @@ def compare(cards1, cards2):
     value1 = value2 = []
     for card in cards1:
         suit1.append(card.value[0])
-        value1.append(int(card.value[1:]))
+        value1.append(card.getValue())
     for card in cards2:
         suit2.append(card.value[0])
-        value2.append(int(card.value[1:]))
+        value2.append(card.getValue())
     # if num1 > num2, player wins, return True
     if number_1 > number_2:
         return True
@@ -200,62 +212,64 @@ def compare(cards1, cards2):
     elif number_1 < number_2:
         return False
     # same type of hands
-    elif number_1 == number_2:
-        # if bomb
-        if number_1 == 6:
-            if value1[0] >= value2[0]:
-                return True
+    # here number_1 == number_2
+    # if bomb
+    elif number_1 == 6:
+        if value1[0] >= value2[0]:
+            return True
+        else:
             return False
-        # if sf and straight
-        if number_1 == 5 or number_1 == 3:
-            max1 = max(value1)
-            max2 = max(value2)
-            if max1 >= max2:
-                return True
+    # if sf and straight
+    elif number_1 == 5 or number_1 == 3:
+        max1 = max(value1)
+        max2 = max(value2)
+        if max1 >= max2:
+            return True
+        else:
             return False
-        # if flush and single
-        if number_1 == 4 or number_1 == 1:
-            value1 = sorted(value1,reverse = True)
-            value2 = sorted(value2,reverse = True)
-            if value1[0] > value2[0]:
+    # if flush and single
+    elif number_1 == 4 or number_1 == 1:
+        value1 = sorted(value1)
+        value2 = sorted(value2)
+        if value1[2] > value2[2]:
+            return True
+        elif value1[2] < value2[2]:
+            return False
+        else:
+            if value1[1] > value2[1]:
                 return True
-            elif value1[0] < value2[0]:
-                return False
-            elif value1[0] == value2[0]:
-                if value1[1] > value2[1]:
-                    return True
-                elif value1[1] < value2[1]:
-                    return False
-                elif value1[1] == value2[1]:
-                    if value1[2] >= value2[2]:
-                        return True
-                    else:
-                        return False
-        # if pair
-        if number_1 == 2:
-            value1 = sorted(value1)
-            value2 = sorted(value2)
-            if value1[0] == value1[1]:
-                pair_value1 = value1[0]
-                single_value1 = value1[2]
-            else:
-                pair_value1 = value1[2]
-                single_value1 = value1[0]
-            if value2[0] == value2[1]:
-                pair_value2 = value2[0]
-                single_value2 = value2[2]
-            else:
-                pair_value2 = value2[2]
-                single_value2 = value2[0]
-            if pair_value1 > pair_value2:
-                return True
-            elif pair_value1 < pair_value2:
+            elif value1[1] < value2[1]:
                 return False
             else:
-                if single_value1 >= single_value2:
+                if value1[0] >= value2[0]:
                     return True
                 else:
                     return False
+    # if pair
+    elif number_1 == 2:
+        value1 = sorted(value1)
+        value2 = sorted(value2)
+        if value1[0] == value1[1]:
+            pair_value1 = value1[0]
+            single_value1 = value1[2]
+        else:
+            pair_value1 = value1[2]
+            single_value1 = value1[0]
+        if value2[0] == value2[1]:
+            pair_value2 = value2[0]
+            single_value2 = value2[2]
+        else:
+            pair_value2 = value2[2]
+            single_value2 = value2[0]
+        if pair_value1 > pair_value2:
+            return True
+        elif pair_value1 < pair_value2:
+            return False
+        else:
+            if single_value1 >= single_value2:
+                return True
+            else:
+                return False
 
             
             
