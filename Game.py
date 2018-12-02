@@ -79,16 +79,20 @@ class Game():
                 bet += 50
                 bet_view.updateText(bet)
             if affirm_Button.clicked(p):
+                # Draw the computer cards
+                for card in computer_cards:
+                    card.kaart.draw(win)
+                
                 # compare the cards to decide who wins and settlement
                 if compare(player_cards, computer_cards):
                     money += bet
                     bank_view.updateText(money)
+                    popText(win,Point(200,80),"YES,YOU WIN!",3)
                 else:
                     money -= bet
                     bank_view.updateText(money)
-                # Draw the computer cards
-                for card in computer_cards:
-                    card.kaart.draw(win)
+                    popText(win,Point(200,80),"SORRY,YOU LOSE",3)
+                
                  
                 # update the buttons
                 updateButtons('gameover',buttons)

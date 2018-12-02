@@ -33,4 +33,13 @@ class text_box(Text):
                 else:
                     self.value.setStyle('normal')
 
-
+def popText(win,center,text,timing):
+    #flash the text to show user the win information
+    win_info = Text(center,text)
+    win_info.setFace("arial")
+    win_info.setFill("black")
+    win_info.setSize(30)
+    win_info.draw(win)
+    time.sleep(timing)
+    win_info.undraw()
+    
