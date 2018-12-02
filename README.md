@@ -80,5 +80,5 @@ Zelle's graphics.py
 
 It is written by John Zelle for use with the book "Python Programming: An Introduction to Computer Science" (Franklin, Beedle & Associates).
 
-LICENSE: This is open-source software released under the terms of the
+LICENSE: Zelle's graphics is open-source software released under the terms of the
 GPL (http://www.gnu.org/licenses/gpl.html).
