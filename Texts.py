@@ -3,7 +3,7 @@
 # Date: 12-02-2018
 from graphics import *
 
-class Scorebox(Text):
+class text_box(Text):
     #Creates a box to record how much money left
     def __init__(self, win, center,text,value):
         x = center.getX()
@@ -33,4 +33,13 @@ class Scorebox(Text):
                 else:
                     self.value.setStyle('normal')
 
-
+def popText(win,center,text,timing):
+    #flash the text to show user the win information
+    win_info = Text(center,text)
+    win_info.setFace("arial")
+    win_info.setFill("black")
+    win_info.setSize(30)
+    win_info.draw(win)
+    time.sleep(timing)
+    win_info.undraw()
+    

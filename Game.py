@@ -19,8 +19,8 @@ class Game():
         money = 1000
         center = Point(250,100)
         # Draw the bank and bet in the window
-        bank_view = Scorebox(win, Point(115,20),"    $",money)
-        bet_view = Scorebox(win, Point(210,20),"Bet:",bet)
+        bank_view = text_box(win, Point(115,20),"    $",money)
+        bet_view = text_box(win, Point(210,20),"Bet:",bet)
         # Draw the buttons needed in the game
         deal_Button = Button(win, Point(50,40), 75, 25,15,"Deal", True)
         bet1_Button = Button(win, Point(50,65),75,25,15,"$1", False)
@@ -65,7 +65,7 @@ class Game():
                     back_image=Card(win,'back',location)
                     back_cards.append(back_image)
                 # update the bottons
-                buttonUpdates('stillplaying',buttons) 
+                updateButtons('stillplaying',buttons) 
             if bet1_Button.clicked(p):
                 bet += 1
                 bet_view.updateText(bet)
@@ -79,19 +79,23 @@ class Game():
                 bet += 50
                 bet_view.updateText(bet)
             if affirm_Button.clicked(p):
+                # Draw the computer cards
+                for card in computer_cards:
+                    card.kaart.draw(win)
+                
                 # compare the cards to decide who wins and settlement
                 if compare(player_cards, computer_cards):
                     money += bet
                     bank_view.updateText(money)
+                    popText(win,Point(200,80),"YES,YOU WIN!",3)
                 else:
                     money -= bet
                     bank_view.updateText(money)
-                # Draw the computer cards
-                for card in computer_cards:
-                    card.kaart.draw(win)
+                    popText(win,Point(200,80),"SORRY,YOU LOSE",3)
+                
                  
                 # update the buttons
-                buttonUpdates('gameover',buttons)
+                updateButtons('gameover',buttons)
             if again_Button.clicked(p):
                 # clear the cards
                 for i in player_cards:
@@ -104,7 +108,7 @@ class Game():
                 bet = 0
                 bet_view.updateText(bet)
                 # update the buttons
-                buttonUpdates("newgame", buttons)
+                updateButtons("newgame", buttons)
                 deck = Deck()
                 deck.Shuffle()
                 

@@ -1,4 +1,4 @@
-Zhajinhua(China Card Game) in Python
+Zhajinhua(Chinese Card Game) in Python
 ====
 
 Group Name and Section
@@ -55,13 +55,12 @@ At first, player has 1000 dollar principal, and the initial bet is one dollar. E
 
 
 
-Requirements
+Installatin Requirements
 -------
 1. Python 3.6+
 
-2. All classes needed and GUI Zelle's graphics.py are included in this repository
+2. All classes needed and GUI Zelle's graphics.py are included in this repository(put all files in the same directory)
 
-3. GUI Zelle's graphics.py (Put this file  and zhajinhua.py together)
 
 Run Instructions
 -------
@@ -74,11 +73,11 @@ Run Instructions
 
 'python zhajinhua.py'
 
+3. Click 'Deal' button to shuffle cards, then choose the amount you want to bet (the initial bet fee is 1$), and click 'Affirm' button to turn over computer's cards and settle your account. 
+
 Reference
 -------
-Zelle's graphics.py
-
-It is written by John Zelle for use with the book "Python Programming: An Introduction to Computer Science" (Franklin, Beedle & Associates).
+graphics.py: It is written by John Zelle for use with the book "Python Programming: An Introduction to Computer Science" (Franklin, Beedle & Associates).
 
 LICENSE: Zelle's graphics is open-source software released under the terms of the
 GPL (http://www.gnu.org/licenses/gpl.html).

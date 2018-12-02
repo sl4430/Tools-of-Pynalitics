@@ -41,7 +41,7 @@ class Button:
         self.active = False
         
         
-def buttonUpdates(status,buttons):
+def updateButtons(status,buttons):
     #update buttons to hint which buttons users can click
     if status == 'newgame':
         buttons[0].activate()
