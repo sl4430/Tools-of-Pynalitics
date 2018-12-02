@@ -5,23 +5,23 @@
 # Assignment by Victor from the book by Zelle, chapter 10
 # Date: 17-12-2016
 
-from graphics import *
-from Gameplay import *
+#from graphics import *
+#from Gameplay import *
 
        
-def main():
-    win = GraphWin("Zhajinhua", 800, 400)
-    win.setCoords(0,250,415,0)
-    win.setBackground("grey")
+#def main():
+   # win = GraphWin("Zhajinhua", 800, 400)
+   # win.setCoords(0,250,415,0)
+    #win.setBackground("grey")
 
     # Draw the table
-    table = Rectangle(Point(400,153),Point(87,27))
-    table.setFill("brown")
-    table.draw(win)
+    #table = Rectangle(Point(400,153),Point(87,27))
+    #table.setFill("brown")
+    #table.draw(win)
 
-    Game(win)
+    #Game(win)
 
-    win.close()
+    #win.close()
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #main()

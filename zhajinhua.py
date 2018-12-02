@@ -5,14 +5,22 @@
 
 #Use this as the main script
 from graphics import *
-from Game import *
+from Gameplay import *
 
        
 def main():
-    #call the game.py
-    Game()
+    win = GraphWin("Zhajinhua", 800, 400)
+    win.setCoords(0,250,415,0)
+    win.setBackground("grey")
 
-    #start.close()
-#check if the program should terminate
+    # Draw the table
+    table = Rectangle(Point(400,153),Point(87,27))
+    table.setFill("brown")
+    table.draw(win)
+
+    Game(win)
+
+    win.close()
+
 if __name__ == "__main__":
     main()
