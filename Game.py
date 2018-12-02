@@ -55,12 +55,17 @@ class Game():
                     player_cards.append(card)
                  # draw 3 cards to computer
                 computer_cards = []
+                back_cards=[]
                 for i in range(3):
+                    back=True
                     location = Point(290+25*i,125) # Place each card 25*i further on the x-axis
                     value = deck.Deal()
                     card = Card(win,value,location)
                     computer_cards.append(card)
                     card.Undraw()
+                    back_image=Card(win,'back',location)
+                    back_cards.append(back_image)
+                    #back_image.draw(win)
                 # update the bottons
                 buttonUpdates('stillplaying',buttons) 
             if bet1_Button.clicked(p):
@@ -86,12 +91,15 @@ class Game():
                 # Draw the computer cards
                 for card in computer_cards:
                     card.kaart.draw(win)
+                 
                 # update the buttons
                 buttonUpdates('gameover',buttons)
             if again_Button.clicked(p):
                 # clear the cards
                 for i in player_cards:
                     i.Undraw()
+                for i in back_cards:
+                    i.Undraw()   
                 for i in computer_cards:
                     i.Undraw()
                 # reset the scoreboard
@@ -104,7 +112,12 @@ class Game():
                 
         # Window closes if the quit_Button is clicked
         win.close()
-        
+
+def draw_back(location):
+    file = "zhajinhua_cardgif/b1fv.gif"
+    return Image(location,file)
+    
+    
 def is_bomb(cards):
     value = []
     for card in cards:
