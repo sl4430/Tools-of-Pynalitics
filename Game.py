@@ -185,8 +185,10 @@ def compare(cards1, cards2):
     # cards1 is player and cards2 is computer
     number_1 = get_max(cards1)
     number_2 = get_max(cards2)
-    suit1 = suit2 = []
-    value1 = value2 = []
+    suit1 = []
+    suit2 = []
+    value1 =[]
+    value2 =[]
     for card in cards1:
         suit1.append(card.value[0])
         value1.append(int(card.value[1:]))
