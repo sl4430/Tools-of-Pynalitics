@@ -3,7 +3,7 @@
 # Date: 12-02-2018
 from graphics import *
 
-class Scorebox(Text):
+class text_box(Text):
     #Creates a box to record how much money left
     def __init__(self, win, center,text,value):
         x = center.getX()
