@@ -61,7 +61,6 @@ Installatin Requirements
 
 2. All classes needed and GUI Zelle's graphics.py are included in this repository(put all files in the same directory)
 
-3. GUI Zelle's graphics.py (Put this file  and zhajinhua.py in the same directory)
 
 Run Instructions
 -------
