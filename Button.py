@@ -1,3 +1,5 @@
+# Author: Qifu Yin, Shujun Liu, Shixin Li, Di Zhu
+# Date: 12-02-2018
 import sys
 from graphics import *
 

@@ -1,6 +1,6 @@
 # The program that executes the main functions of the game.
-# Author: Qifu Yin
-# Date: 12-27-2018
+# Author: Qifu Yin, Shujun Liu, Shixin Li, Di Zhu
+# Date: 12-02-2018
 
 from graphics import *
 import random

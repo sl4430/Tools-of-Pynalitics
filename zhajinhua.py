@@ -1,7 +1,7 @@
 
 # the main program starts the game.
-# Author: Qifu Yin
-# Date: 12-27-2018
+# Author: Qifu Yin, Shujun Liu, Shixin Li, Di Zhu
+# Date: 12-02-2018
 
 #Use this as the main script
 from graphics import *
