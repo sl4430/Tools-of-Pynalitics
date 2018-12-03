@@ -49,7 +49,7 @@ At first, player has 1000 dollar principal, and the initial bet is one dollar. E
 
 6. Pair: AA > KK > ... > 33 > 22. If the number of pairs are the same, compare the remaining card. For example, 3-3-2 is smaller than 3-3-4.
 
-7. Single: the same with flush
+7. Single: A>K>Q>J>10>...>2 (11 represents 'J', 12 represents 'Q', 13 represents 'K', 14 represents 'A') The compare rules are the same as flush.
 
 8. If the number and combinations of cards are totally the same between two players, player wins.
 
